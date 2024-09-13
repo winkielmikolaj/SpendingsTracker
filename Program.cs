@@ -1,3 +1,6 @@
+using Microsoft.EntityFrameworkCore;
+using SpendingsTracker.Models;
+
 namespace SpendingsTracker
 {
     public class Program
@@ -8,6 +11,12 @@ namespace SpendingsTracker
 
             // Add services to the container.
             builder.Services.AddControllersWithViews();
+            //laczenie sie z baza w programie.cs
+            builder.Services.AddDbContext<SpendingsTrackedDbContext>(options =>
+            {
+                options.UseInMemoryDatabase("SpendingsTrackerDb");
+            });
+
 
             var app = builder.Build();
 
