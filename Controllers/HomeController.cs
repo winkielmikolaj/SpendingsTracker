@@ -63,7 +63,7 @@ namespace SpendingsTracker.Controllers
             return View();
         }
 
-        public IActionResult Expenses()
+        public IActionResult Expenses() 
         { 
             var allExpenses = _context.Expenses.ToList();
 
