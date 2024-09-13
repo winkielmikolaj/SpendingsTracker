@@ -3,13 +3,13 @@
 }
 @model List<Expense>
 <head>
-    <div>
-        <h1 class="text-center">My Expenses</h1>
-        <span>test pisania w asp.net mvc</span>
-        <button>Test</button>
-        <div>
-            <a asp-action="Index" class="btn btn-primary">Overview</a>
-        </div>
+    <div class="text-center">
+        <h1>My Expenses</h1>
+        <br />
+        <hr />
+        <h3>Total Expenses $@ViewBag.TotalExpenses</h3>
+        <br />
+
         <div>
             <table class="table">
                 <thead>

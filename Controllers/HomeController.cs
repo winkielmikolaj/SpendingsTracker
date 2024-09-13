@@ -65,9 +65,13 @@ namespace SpendingsTracker.Controllers
 
         public IActionResult Expenses()
         { 
-            var expenses = _context.Expenses.ToList();
+            var allExpenses = _context.Expenses.ToList();
 
-            return View(expenses);
+            var totalExpenses = allExpenses.Sum(x => x.Value);
+
+            ViewBag.TotalExpenses = totalExpenses;
+
+            return View(allExpenses);
         }
 
         public IActionResult Index()
